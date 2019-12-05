@@ -45,10 +45,10 @@ export function Breadcrumb(props) {
 
     const [breadcrumbItems, setBreadcrumbItems] = useState([]);
 
-    let nextBreadcrumbItems = currentBreadcrumbItems[currentBreadcrumbItems.length - 1].id
     useEffect(() => {
         setBreadcrumbItems(currentBreadcrumbItems);
-    }, [nextBreadcrumbItems]);
+        // eslint-disable-next-line
+    }, [location.pathname]);
 
     const breadcrumbProps = {
         style: {
